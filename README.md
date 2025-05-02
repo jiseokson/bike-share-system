@@ -1,5 +1,5 @@
 ## 👋 Welcome to Bike Share
-JUST FOR TEST PR TEMPLATE
+
 ### 🧭 개요
 
 **Bike Share**는 사용자가 자전거를 **쉽게 대여하고 반납할 수 있도록 지원하는 공유 자전거 시뮬레이션 시스템**입니다. 본 프로젝트는 2025년도 소프트웨어공학 과목의 팀 프로젝트로 진행됩니다.
