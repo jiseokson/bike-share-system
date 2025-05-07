@@ -1,6 +1,6 @@
 ## 👋 Welcome to Bike Share
 
-## 🛠️ 사용 도구 및 기술 스택
+### 🛠️ 사용 도구 및 기술 스택
 
 - **UML 모델링**: [Umbrello UML Modeller]
 
