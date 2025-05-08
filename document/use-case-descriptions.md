@@ -1,4 +1,4 @@
-# Use Case Descriptions
+# Use Case Descriptions 
 
 ## 1. 회원 가입
 
