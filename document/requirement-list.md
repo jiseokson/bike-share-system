@@ -2,10 +2,6 @@
 
 ## 요구 사항 명세 (Requirement List)
 
-30837
-
-## 요구 사항 명세 (Requirement List)
-
 | No. | Requirement | Usecase |
 | --- | --- | --- |
 | 1 | 시스템을 이용하려면 사용자는 **회원 가입**을 해야 한다. 회원의 필수 입력 정보는 ID, 비밀번호, 전화번호, 결제 수단, 선호 자전거 유형(일반/전기) 등이다. | 회원가입 (register account) |
