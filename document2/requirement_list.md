@@ -1,3 +1,5 @@
+11952
+https://github.com/jiseokson/bike-share-system
 | **No** | **Requirement** | **Usecase** |
 | --- | --- | --- |
 | 1 | 시스템을 이용하려면 **사용자**는 **회원 가입**을 해야 한다. 회원의 필수 입력 정보는 ID, 비밀번호, 전화 번호이다. | 회원가입 (Sign Up) |
