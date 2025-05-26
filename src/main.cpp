@@ -1,7 +1,5 @@
 #include <fstream>
 
-#include <iostream>
-
 #include "ui.h"
 #include "entity.h"
 #include "controller.h"
@@ -61,5 +59,23 @@ int main()
     }
   }
 
-  // clean up all used resources here
+  fin.close();
+  fout.close();
+
+  delete userCollection;
+  delete bikeCollection;
+
+  delete signUpUI;
+  delete loginUI;
+  delete logoutUI;
+  delete registerBikeUI;
+  delete rentalBikeUI;
+  delete viewRentalUI;
+
+  delete signUp;
+  delete login;
+  delete logout;
+  delete registerBike;
+  delete rentalBike;
+  delete viewRental;
 }
