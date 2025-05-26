@@ -14,9 +14,20 @@ public:
   User(std::string id, std::string password, std::string phone)
       : id(id), password(password), phone(phone) {}
 
-  std::string getId() const;
-  std::string getPassword() const;
-  std::string getPhone() const;
+  std::string getId() const
+  {
+    return id;
+  }
+
+  std::string getPassword() const
+  {
+    return password;
+  }
+
+  std::string getPhone() const
+  {
+    return phone;
+  }
 };
 
 // 자전거 정보를 저장하는 클래스
@@ -30,11 +41,26 @@ public:
   Bike(std::string id, std::string name)
       : id(id), name(name), rentedUser(nullptr) {}
 
-  std::string getId() const;
-  std::string getName() const;
+  std::string getId() const
+  {
+    return id;
+  }
 
-  User *setRentedUser(User *user);
-  User *getRentedUser() const;
+  std::string getName() const
+  {
+    return name;
+  }
+
+  User *setRentedUser(User *user)
+  {
+    rentedUser = user;
+    return rentedUser;
+  }
+
+  User *getRentedUser() const
+  {
+    return rentedUser;
+  }
 };
 
 // 사용자 목록과 로그인 상태를 관리하는 컬렉션 클래스
