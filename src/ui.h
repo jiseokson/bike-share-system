@@ -15,7 +15,7 @@ protected:
 public:
   UI(std::ifstream &fin, std::ofstream &fout) : fin(fin), fout(fout) {}
 
-  void set_controller(Controller *controller) { this->controller = controller; };
+  void setController(Controller *controller) { this->controller = controller; };
   void startUI() {}
   virtual void interact() = 0;
 };

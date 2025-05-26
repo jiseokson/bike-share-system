@@ -11,8 +11,7 @@ class Controller
 public:
   Controller(UI *ui) : ui(ui)
   {
-    ui->set_controller(this);
-    ui->startUI();
+    ui->setController(this);
   }
 };
 

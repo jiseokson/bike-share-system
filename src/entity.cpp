@@ -12,7 +12,7 @@ User *UserCollection::setLoginUser(User *user)
   return loginUser;
 }
 
-void UserCollection::unsetLoginUser(User *user)
+void UserCollection::unsetLoginUser()
 {
   loginUser = nullptr;
 }

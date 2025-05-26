@@ -16,7 +16,7 @@ User *Login::login(std::string id, std::string password)
 User *Logout::logout()
 {
   User *user = userCollection->getLoginUser();
-  userCollection->unsetLoginUser(user);
+  userCollection->unsetLoginUser();
   return user;
 }
 

@@ -71,7 +71,7 @@ public:
 
   User *addUser(std::string, std::string, std::string);
   User *setLoginUser(User *);
-  void unsetLoginUser(User *);
+  void unsetLoginUser();
 
   User *getUserById(std::string);
   User *getLoginUser();
