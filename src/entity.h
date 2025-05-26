@@ -33,10 +33,11 @@ class Bike
 {
   std::string id;
   std::string name;
+  User *rentedUser;
 
 public:
   Bike(std::string id, std::string name)
-      : id(id), name(name) {}
+      : id(id), name(name), rentedUser(nullptr) {}
 
   std::string getId() const
   {
@@ -47,30 +48,44 @@ public:
   {
     return name;
   }
+
+  User *setRentedUser(User *user)
+  {
+    rentedUser = user;
+    return rentedUser;
+  }
+
+  User *getRentedUser()
+  {
+    return rentedUser;
+  }
 };
 
 class UserCollection
 {
-  std::vector<User *> users;
+  std::vector<User> users;
+  User *loginUser;
 
 public:
-  void *addUser(User *);
-  void setLoginUser(User *);
+  UserCollection() : users{User("admin", "admin", "")}, loginUser(nullptr) {}
+
+  User *addUser(std::string, std::string, std::string);
+  User *setLoginUser(User *);
   void unsetLoginUser(User *);
 
-  User *getUserById(std::string) const;
-  User *getLoginUser() const;
+  User *getUserById(std::string);
+  User *getLoginUser();
 };
 
 class BikeCollection
 {
-  std::vector<Bike *> bikes;
+  std::vector<Bike> bikes;
   std::vector<Bike *> rentedBikes;
 
 public:
-  void addBike();
-  void setRentalBike(Bike *);
+  Bike *addBike(std::string, std::string);
+  Bike *setRentalBike(Bike *, User *);
 
-  Bike *getBikeById() const;
-  std::vector<Bike *> getRentedBikesByUser(User *) const;
+  Bike *getBikeById(std::string);
+  std::vector<Bike *> getRentedBikesByUser(User *);
 };

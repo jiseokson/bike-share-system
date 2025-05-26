@@ -1,31 +1,40 @@
 #include "controller.h"
 
-User *SignUp::signup(std::string, std::string, std::string)
+User *SignUp::signup(std::string id, std::string password, std::string phone)
 {
-  return new User("TEST_ID", "TEST_PASSWORD", "01011112222");
+  return userCollection->addUser(id, password, phone);
 }
 
-User *Login::login(std::string, std::string)
+User *Login::login(std::string id, std::string password)
 {
-  return new User("TEST_ID", "TEST_PASSWORD", "01011112222");
+  User *user = userCollection->getUserById(id);
+  if (user->getPassword() == password)
+    return userCollection->setLoginUser(user);
+  return nullptr;
 }
 
 User *Logout::logout()
 {
-  return new User("TEST_ID", "TEST_PASSWORD", "01011112222");
+  User *user = userCollection->getLoginUser();
+  userCollection->unsetLoginUser(user);
+  return user;
 }
 
 Bike *RegisterBike::registerBike(std::string id, std::string name)
 {
-  return new Bike(id, name);
+  return bikeCollection->addBike(id, name);
 }
 
 Bike *RentalBike::rentalBike(std::string id)
 {
-  return new Bike("TEST_BIKE_ID", "TEST_BIKE_NAME");
+  User *user = userCollection->getLoginUser();
+  Bike *bike = bikeCollection->getBikeById(id);
+  bikeCollection->setRentalBike(bike, user);
+  return bike;
 }
 
 std::vector<Bike *> ViewRental::viewRentals()
 {
-  return std::vector<Bike *>{new Bike("TEST_BIKE_ID", "TEST_BIKE_NAME")};
+  User *user = userCollection->getLoginUser();
+  return bikeCollection->getRentedBikesByUser(user);
 }

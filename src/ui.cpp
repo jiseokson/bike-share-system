@@ -53,7 +53,7 @@ void RentalBikeUI::interact()
 
   Bike *bike = ((RentalBike *)controller)->rentalBike(id);
 
-  fout << "4.1. 자전거 등록" << std::endl;
+  fout << "4.1. 자전거 대여" << std::endl;
   fout << "> " << bike->getId() << ' ' << bike->getName() << std::endl;
   fout << std::endl;
 }
