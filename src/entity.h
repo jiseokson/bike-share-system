@@ -3,6 +3,7 @@
 #include <string>
 #include <vector>
 
+// 사용자 정보를 저장하는 클래스
 class User
 {
   std::string id;
@@ -13,22 +14,12 @@ public:
   User(std::string id, std::string password, std::string phone)
       : id(id), password(password), phone(phone) {}
 
-  std::string getId() const
-  {
-    return id;
-  }
-
-  std::string getPassword() const
-  {
-    return password;
-  }
-
-  std::string getPhone() const
-  {
-    return phone;
-  }
+  std::string getId() const;
+  std::string getPassword() const;
+  std::string getPhone() const;
 };
 
+// 자전거 정보를 저장하는 클래스
 class Bike
 {
   std::string id;
@@ -39,28 +30,14 @@ public:
   Bike(std::string id, std::string name)
       : id(id), name(name), rentedUser(nullptr) {}
 
-  std::string getId() const
-  {
-    return id;
-  }
+  std::string getId() const;
+  std::string getName() const;
 
-  std::string getName() const
-  {
-    return name;
-  }
-
-  User *setRentedUser(User *user)
-  {
-    rentedUser = user;
-    return rentedUser;
-  }
-
-  User *getRentedUser() const
-  {
-    return rentedUser;
-  }
+  User *setRentedUser(User *user);
+  User *getRentedUser() const;
 };
 
+// 사용자 목록과 로그인 상태를 관리하는 컬렉션 클래스
 class UserCollection
 {
   std::vector<User> users;
@@ -77,6 +54,7 @@ public:
   User *getLoginUser();
 };
 
+// 자전거 목록과 대여 정보를 관리하는 컬렉션 클래스
 class BikeCollection
 {
   std::vector<Bike> bikes;

@@ -1,6 +1,7 @@
 #include "ui.h"
 #include "controller.h"
 
+// 회원가입 UI 로직: 입력 받은 정보로 회원 가입 수행
 void SignUpUI::interact()
 {
   std::string id, password, phone;
@@ -13,6 +14,7 @@ void SignUpUI::interact()
   fout << std::endl;
 }
 
+// 로그인 UI 로직: 입력 받은 정보로 로그인 수행
 void LoginUI::interact()
 {
   std::string id, password;
@@ -25,6 +27,7 @@ void LoginUI::interact()
   fout << std::endl;
 }
 
+// 로그아웃 UI 로직: 현재 로그인한 사용자 로그아웃
 void LogoutUI::interact()
 {
   User *user = ((Logout *)controller)->logout();
@@ -34,6 +37,7 @@ void LogoutUI::interact()
   fout << std::endl;
 }
 
+// 자전거 등록 UI 로직: 입력 받은 정보로 자전거 등록
 void RegisterBikeUI::interact()
 {
   std::string id, name;
@@ -46,6 +50,7 @@ void RegisterBikeUI::interact()
   fout << std::endl;
 }
 
+// 자전거 대여 UI 로직: 입력 받은 자전거 ID로 대여 처리
 void RentalBikeUI::interact()
 {
   std::string id;
@@ -58,6 +63,7 @@ void RentalBikeUI::interact()
   fout << std::endl;
 }
 
+// 대여한 자전거 목록을 출력하는 UI 로직
 void ViewRentalUI::interact()
 {
   std::vector<Bike *> rentedBikes = ((ViewRental *)controller)->viewRentals();
