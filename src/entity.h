@@ -55,7 +55,7 @@ public:
     return rentedUser;
   }
 
-  User *getRentedUser()
+  User *getRentedUser() const
   {
     return rentedUser;
   }
