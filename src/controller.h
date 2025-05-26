@@ -22,25 +22,64 @@ class SignUp : public Controller
 
 public:
   SignUp(UI *ui, UserCollection *userCollection)
-      : Controller(ui) {}
+      : Controller(ui), userCollection(userCollection) {}
+
+  User *signup(std::string, std::string, std::string);
 };
 
-class Login
+class Login : public Controller
 {
+  UserCollection *userCollection;
+
+public:
+  Login(UI *ui, UserCollection *userCollection)
+      : Controller(ui), userCollection(userCollection) {}
+
+  User *login(std::string, std::string);
 };
 
-class Logout
+class Logout : public Controller
 {
+  UserCollection *userCollection;
+
+public:
+  Logout(UI *ui, UserCollection *userCollection)
+      : Controller(ui), userCollection(userCollection) {}
+
+  User *logout();
 };
 
-class RentalBike
+class RegisterBike : public Controller
 {
+  BikeCollection *bikeCollection;
+
+public:
+  RegisterBike(UI *ui, BikeCollection *bikeCollection)
+      : Controller(ui), bikeCollection(bikeCollection) {}
+
+  Bike *registerBike(std::string, std::string);
 };
 
-class ViewRental
+class RentalBike : public Controller
 {
+  UserCollection *userCollection;
+  BikeCollection *bikeCollection;
+
+public:
+  RentalBike(UI *ui, UserCollection *userCollection, BikeCollection *bikeCollection)
+      : Controller(ui), userCollection(userCollection), bikeCollection(bikeCollection) {}
+
+  Bike *rentalBike(std::string);
 };
 
-class RegisterBike
+class ViewRental : public Controller
 {
+  UserCollection *userCollection;
+  BikeCollection *bikeCollection;
+
+public:
+  ViewRental(UI *ui, UserCollection *userCollection, BikeCollection *bikeCollection)
+      : Controller(ui), userCollection(userCollection), bikeCollection(bikeCollection) {}
+
+  std::vector<Bike *> viewRentals();
 };

@@ -44,6 +44,14 @@ public:
   void interact() override;
 };
 
+class RegisterBikeUI : public UI
+{
+public:
+  RegisterBikeUI(std::ifstream &fin, std::ofstream &fout) : UI(fin, fout) {}
+
+  void interact() override;
+};
+
 class RentalBikeUI : public UI
 {
 public:
@@ -56,14 +64,6 @@ class ViewRentalUI : public UI
 {
 public:
   ViewRentalUI(std::ifstream &fin, std::ofstream &fout) : UI(fin, fout) {}
-
-  void interact() override;
-};
-
-class RegisterBikeUI : public UI
-{
-public:
-  RegisterBikeUI(std::ifstream &fin, std::ofstream &fout) : UI(fin, fout) {}
 
   void interact() override;
 };
