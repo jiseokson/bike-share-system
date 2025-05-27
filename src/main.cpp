@@ -23,6 +23,7 @@ int main()
   RegisterBikeUI *registerBikeUI = new RegisterBikeUI(fin, fout);
   RentalBikeUI *rentalBikeUI = new RentalBikeUI(fin, fout);
   ViewRentalUI *viewRentalUI = new ViewRentalUI(fin, fout);
+  ExitUI *exitUI = new ExitUI(fin, fout);
 
   // 컨트롤러 인스턴스 생성 및 UI에 연결
   SignUp *signUp = new SignUp(signUpUI, userCollection);
@@ -58,7 +59,7 @@ int main()
 
     else if (menu1 == 6 && menu2 == 1)
     {
-      fout << "6.1. 종료";
+      exitUI->interact();
       break;
     }
   }
@@ -77,6 +78,7 @@ int main()
   delete registerBikeUI;
   delete rentalBikeUI;
   delete viewRentalUI;
+  delete exitUI;
 
   delete signUp;
   delete login;

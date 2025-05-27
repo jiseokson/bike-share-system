@@ -73,3 +73,8 @@ void ViewRentalUI::interact()
     fout << "> " << bike->getId() << ' ' << bike->getName() << std::endl;
   fout << std::endl;
 }
+
+void ExitUI::interact()
+{
+  fout << "6.1. 종료";
+}

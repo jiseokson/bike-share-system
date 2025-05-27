@@ -74,3 +74,10 @@ public:
   ViewRentalUI(std::ifstream &fin, std::ofstream &fout) : UI(fin, fout) {}
   void interact() override;
 };
+
+class ExitUI : public UI
+{
+public:
+  ExitUI(std::ifstream &fin, std::ofstream &fout) : UI(fin, fout) {}
+  void interact() override;
+};

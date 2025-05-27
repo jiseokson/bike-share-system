@@ -1,3 +1,4 @@
+#include <algorithm>
 #include "controller.h"
 
 // 사용자 정보를 userCollection에 추가
@@ -42,5 +43,8 @@ Bike *RentalBike::rentalBike(std::string id)
 std::vector<Bike *> ViewRental::viewRentals()
 {
   User *user = userCollection->getLoginUser();
-  return bikeCollection->getRentedBikesByUser(user);
+  auto rentedBikes = bikeCollection->getRentedBikesByUser(user);
+  std::sort(rentedBikes.begin(), rentedBikes.end(), [](auto *a, auto *b) -> bool
+            { return a->getId() < b->getId(); });
+  return rentedBikes;
 }
