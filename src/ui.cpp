@@ -76,5 +76,6 @@ void ViewRentalUI::interact()
 
 void ExitUI::interact()
 {
+  ((Exit *)controller)->exit();
   fout << "6.1. 종료";
 }

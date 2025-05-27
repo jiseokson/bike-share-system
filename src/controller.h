@@ -90,3 +90,11 @@ public:
 
   std::vector<Bike *> viewRentals();
 };
+
+class Exit : public Controller
+{
+public:
+  Exit(UI *ui) : Controller(ui) {}
+
+  void exit() {}
+};

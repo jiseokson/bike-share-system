@@ -32,6 +32,7 @@ int main()
   RegisterBike *registerBike = new RegisterBike(registerBikeUI, bikeCollection);
   RentalBike *rentalBike = new RentalBike(rentalBikeUI, userCollection, bikeCollection);
   ViewRental *viewRental = new ViewRental(viewRentalUI, userCollection, bikeCollection);
+  Exit *exit = new Exit(exitUI);
 
   // 메뉴 입력을 처리하고 적절한 UI 동작을 호출
   while (true)
